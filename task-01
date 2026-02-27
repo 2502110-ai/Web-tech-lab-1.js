@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 1</title>
+</head>
+<body>
+    <h1>Name: Noor Ul Ain</h1>
+    <p>Roll No: 2502110</p>
+
+    <script>
+        function sayHello(name, callback) {
+            setTimeout(() => {
+                const greetingMessage = `Hello, ${name}!`;
+                callback(greetingMessage);
+            }, 3000);
+        }
+
+        sayHello("Ayesha", (message) => {
+            console.log(message); 
+        });
+    </script>
+</body>
+</html>
