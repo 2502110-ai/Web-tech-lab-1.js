@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 7</title>
+</head>
+<body>
+    <h1>Name: Noor Ul Ain</h1>
+    <p>Roll No: 2502110</p>
+
+    <script>
+        const login = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Step 1: Ayesha logged in.");
+                    resolve({ userId: 123 });
+                }, 1000);
+            });
+        };
+
+        const getProfile = (userId) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log(`Step 2: Fetching profile for user ID ${userId}.`);
+                    resolve({ name: "Ayesha", status: "Active" });
+                }, 1000);
+            });
+        };
+
+        const fetchUserAndProfile = async () => {
+            try {
+                const user = await login();
+                const profile = await getProfile(user.userId);
+                console.log("Step 3: Profile details received:", profile);
+            } catch (error) {
+                console.error("An error occurred during the process", error);
+            }
+        };
+
+        fetchUserAndProfile();
+    </script>
+</body>
+</html>
