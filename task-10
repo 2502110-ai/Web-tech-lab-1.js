@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 10</title>
+</head>
+<body>
+    <h1>Name: Noor Ul Ain</h1>
+    <p>Roll No: 2502110</p>
+
+    <script>
+        const buffer = new ArrayBuffer(16);
+        const view = new Uint8Array(buffer);
+        for (let i = 0; i < 16; i++) {
+            view[i] = 65 + i; 
+        }
+        const decoder = new TextDecoder();
+        const decodedString = decoder.decode(view);
+        console.log(decodedString);
+    </script>
+</body>
+</html>
