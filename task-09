@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 9</title>
+</head>
+<body>
+    <h1>Name: Noor Ul Ain</h1>
+    <p>Roll No: 2502110</p>
+    <input type="text" id="messageInput" placeholder="Type your message">
+    <button id="sendButton">Send</button>
+    <script>
+        const socket = new WebSocket('wss://echo.websocket.org/');
+        const inputField = document.getElementById('messageInput');
+        const sendBtn = document.getElementById('sendButton');
+        sendBtn.addEventListener('click', () => {
+            socket.send(inputField.value);
+            inputField.value = ''; 
+        });
+    </script>
+</body>
+</html>
