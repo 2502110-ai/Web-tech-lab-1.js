@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 5</title>
+</head>
+<body>
+    <h1>Name: Noor Ul Ain</h1>
+    <p>Roll No: 2502110</p>
+
+    <script>
+        const promise1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("First Promise won! (Resolved in 1 second)");
+            }, 1000);
+        });
+
+        const promise2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Second Promise won! (Resolved in 3 seconds)");
+            }, 3000);
+        });
+
+        Promise.race([promise1, promise2])
+            .then(winner => {
+                console.log(winner);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    </script>
+</body>
+</html>
