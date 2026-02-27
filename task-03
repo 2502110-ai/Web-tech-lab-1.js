@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 3</title>
+</head>
+<body>
+    <h1>Name: Noor Ul Ain</h1>
+    <p>Roll No: 2502110</p>
+
+    <script>
+        function fetchProductIDs() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([101, 102, 103]);
+                }, 1000);
+            });
+        }
+
+        function fetchProductDetails(id) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (id) {
+                        resolve(`Product Details for ID: ${id}`);
+                    } else {
+                        reject("Error: Product ID not found");
+                    }
+                }, 1000);
+            });
+        }
+
+        fetchProductIDs()
+            .then(ids => {
+                return fetchProductDetails(ids[0]);
+            })
+            .then(details => {
+                console.log(details);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    </script>
+</body>
+</html>
