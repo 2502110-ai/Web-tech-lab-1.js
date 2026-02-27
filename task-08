@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 8</title>
+</head>
+<body>
+    <h1>Name: Noor Ul Ain</h1>
+    <p>Roll No: 2502110</p>
+    
+    <h2>Page Reload Counter: <span id="counter"></span></h2>
+    <script>
+        let count = sessionStorage.getItem("reloadCount");
+
+        if (count === null) {
+            count = 1;
+        } else {
+            count = parseInt(count) + 1;
+        }
+        sessionStorage.setItem("reloadCount", count);
+        document.getElementById("counter").innerText = count;
+    </script>
+</body>
+</html>
